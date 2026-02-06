@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portfólio de Mangaká</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Portfólio de Artista de Mangá" name="keywords">
+    <meta content="Portfólio profissional de mangaká mostrando obras e projetos" name="description">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+            /* Carrossel Wide - Versão Melhorada */
+        .wide-carousel-section {
+            padding: 60px 0;
+            background: #f8f9fa; /* Cor de fundo igual ao seu body */
+        }
+
+        .wide-carousel {
+            width: 100%;
+            height: 350px; /* Altura aumentada */
+            overflow: hidden;
+            position: relative;
+            border: 5px solid #1a1a1a; /* Borda mais espessa e elegante */
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.1); /* Sombra mais suave */
+            border-radius: 4px; /* Cantos levemente arredondados */
+        }
+
+        .wide-carousel-inner {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 45s linear infinite; /* Velocidade aumentada */
+        }
+
+        .wide-carousel-item {
+            width: 33.333%;
+            height: 100%;
+            flex-shrink: 0;
+            transition: transform 0.3s ease; /* Transição suave para hover */
+        }
+
+        .wide-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            user-select: none; /* Previne seleção acidental */
+        }
+
+        /* Efeito de hover mais suave */
+        .wide-carousel-item:hover {
+            transform: scale(1.01);
+            z-index: 1;
+        }
+
+        /* Animação otimizada */
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-66.666%); }
+        }
+
+        /* Removendo o efeito manga-panel para esta seção */
+        .wide-carousel .manga-panel {
+            border: none;
+            box-shadow: none;
+            transform: none !important;
+        }
+        .img-personagem {
+            width: 100%;
+            height: 500px; /* ajuste a altura conforme necessário */
+            object-fit: cover;
+            border-radius: 50% 0 0 50%; /* ou ajuste conforme seu design */
+        }
+
+        /* Estilo para a seção do timelapse */
+        .timelapse-section {
+            background-color: #1a1a1a;
+            padding: 40px 0;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+                
+        .timelapse-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+                
+        .timelapse-container video {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        /* Estilos personalizados para mangá */
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .bg-dark {
+            background-color: #1a1a1a !important;
+        }
+        
+        .bg-primary {
+            background-color: #e63946 !important; /* Vermelho mais vibrante */
+        }
+        
+        .text-primary {
+            color: #e63946 !important;
+        }
+        
+        .btn-primary {
+            background-color: #e63946;
+            border-color: #e63946;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c1121f;
+            border-color: #c1121f;
+        }
+        
+        .section-title {
+            color: #e63946;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .display-3 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar-brand h1 {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: 700;
+        }
+        
+        .manga-panel {
+            border: 3px solid #1a1a1a;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .manga-panel:hover {
+            transform: scale(1.02);
+        }
+        
+        .character-design {
+            background-color: white;
+            padding: 15px;
+            border: 2px solid #1a1a1a;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row gx-0 wow fadeIn" data-wow-delay="0.1s">
+            <div class="col-lg-3 bg-primary d-none d-lg-block">
+                <a href="index.html"
+                    class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                    <h1 class="m-0 display-4 text-white text-uppercase">Mangaka</h1>
+                </a>
+            </div>
+            <div class="col-lg-9">
+                <div class="row gx-0 d-none d-lg-flex bg-dark">
+                    <div class="col-6 px-5 text-start">
+                        <div class="h-100 d-inline-flex align-items-center py-2 me-4">
+                            <i class="fa fa-envelope text-primary me-2"></i>
+                            <p class="mb-0">lucasreisdesingpg@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-6 px-5 text-end">    
+                        <div class="h-100 d-inline-flex align-items-center py-2">
+                            <i class="fa fa-phone-alt text-primary me-2"></i>
+                            <p class="mb-0">+55 61 9404-7896</p>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-dark p-3 p-lg-0 px-lg-5" style="background: #111111;">
+                    <a href="index.html" class="navbar-brand d-block d-lg-none">
+                        <h1 class="m-0 display-4 text-primary text-uppercase">Mangaka</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="#" class="nav-item nav-link active">Início</a>
+                            <a href="#" class="nav-item nav-link">Sobre</a>
+                            <a href="#" class="nav-item nav-link">Portfólio</a>
+                            <a href="#" class="nav-item nav-link">Personagens</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projetos</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="#" class="dropdown-item">Mangás</a>
+                                    <a href="#" class="dropdown-item">Ilustrações</a>
+                                    <a href="#" class="dropdown-item">Commissions</a>
+                                </div>
+                            </div>
+                            <a href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings" target="_blank" class="nav-item nav-link">Contato</a>
+                        </div>
+                        <div class="d-none d-lg-flex align-items-center py-2">
+                            <a href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings" target="_blank" class="nav-item nav-link">Contato</a>
+                            <a class="btn btn-outline-secondary btn-square rounded-circle ms-2" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a class="btn btn-outline-secondary btn-square rounded-circle ms-2" href="https://www.instagram.com/lucas_kings_art?igsh=MTNrbm9iNGNpbHJjNA==" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    <!-- Hero Start -->
+    <div class="container-fluid p-5 mb-5 bg-dark text-secondary">
+        <div class="row g-5 py-5">
+            <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-1 text-secondary text-center mb-0">Luke Kings</h1>
+                <p class="text-center text-primary">ARTISTA DE MANGÁ & ILUSTRADOR</p>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid rounded manga-panel mb-3" src="img/capa1.jpg">
+                <p>
+                    <i class="bi bi-arrow-down animate-up-down" style="font-size: 3rem; color: #e63946;"></i>
+                </p>
+                <p class="mb-0">
+                    Especialização em mangá, ilustrações ocidentais, traçados, character desing, teoria das cores, storytelling e enquadramento.
+                </p>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded manga-panel" src="img/manga-pagina-1.jpg" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <p>
+                    Um justiceiro sem pudor, uma ameaça a aqueles que desafiam a ordem dos fatores estabelecidos na sociedade, Skar, o anti vilão que com poderes baseados em ondas sonoras é capaz de mudar o destino de seu povo.
+                </p>
+                <p>
+                    <i class="bi bi-arrow-up animate-up-down" style="font-size: 3rem; color: #e63946;"></i>
+                </p>
+                <img class="img-fluid rounded manga-panel" src="img/ilustracao-vertical 1.jpg">
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!-- About Start -->
+    <div class="container-fluid p-5">
+        <div class="row gx-5">
+            <div class="col-lg-5 mb-5 mb-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <div class="position-absolute top-0 start-0"
+                        style="width: 560px; height: 560px;">
+                        <img class="img-fluid" src="img/assinatura.png" alt="Assinatura">
+                    </div>
+                    <img class="position-absolute w-100 h-100 rounded-circle rounded-bottom rounded-end manga-panel"
+                        src="img/foto-artista.jpg" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="mb-4 wow fadeIn" data-wow-delay="0.2s">
+                    <h5 class="section-title">Sobre Mim</h5>
+                    <h1 class="display-3 mb-0">Arte que Conta Histórias</h1>
+                </div>
+                <p class="mb-4 wow fadeIn" data-wow-delay="0.3s">Nascido em Brasília, tem o objetivo de vender suas ilustrações, conseguir contratos com empresas maiores.  
+Esse ano ainda se colocar em posição de liderança criativa. Lucas entende a diferença entre um artista por escolha e por chamado.</p>
+                <div class="row">
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                        <div class="bg-light rounded p-4 character-design">
+                            <img class="img-fluid bg-primary rounded-circle mb-3" src="img/icon/pen-icon.png" style="width: 80px; height: 80px;">
+                            <h4>Técnica Tradicional</h4>
+                            <p class="mb-0">Domínio completo de técnicas de nanquim, screen tones e layout de páginas no estilo mangá profissional.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="bg-light rounded p-4 character-design">
+                            <img class="img-fluid bg-primary rounded-circle mb-3" src="img/icon/digital-icon.png" style="width: 80px; height: 80px;">
+                            <h4>Digital</h4>
+                            <p class="mb-0">Fluente em Clip Studio Paint, Photoshop e Procreate para ilustrações digitais e colorização profissional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Portfolio Start -->
+    <div class="container-fluid feature position-relative p-5 pb-0 mt-5">
+        <div class="row g-5 gb-5">
+            <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="feature-item rounded text-center p-5">
+                    <img class="img-fluid bg-white rounded-circle" src="img/icon/manga-icon.png" style="width: 150px; height: 150px;">
+                    <h3 class="my-4">Mangás</h3>
+                    <p class="text-light">Séries completas e one-shots publicados em revistas e volumes tankōbon.</p>
+                    <a class="font-body" style="letter-spacing: 1px;" href="#">Ver Mais <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.3s">
+                <div class="feature-item rounded text-center p-5">
+                    <img class="img-fluid bg-white rounded-circle" src="img/icon/character-icon.png" style="width: 150px; height: 150px;">
+                    <h3 class="my-4">Design de Personagens</h3>
+                    <p class="text-light">Concepção visual e sheets completos para seus projetos.</p>
+                    <a class="font-body" style="letter-spacing: 1px;" href="https://www.instagram.com/lucas_kings_art?igsh=MTNrbm9iNGNpbHJjNA==" target="_blank">Ver Mais <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="feature-item rounded text-center p-5">
+                    <img class="img-fluid bg-white rounded-circle" src="img/icon/color-icon.png" style="width: 150px; height: 150px;">
+                    <h3 class="my-4">Ilustrações Coloridas</h3>
+                    <p class="text-light">Arte digital e tradicional para capas, pôsteres e colecionáveis.</p>
+                    <a class="font-body" style="letter-spacing: 1px;" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings" target="_blank">Ver Mais <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-6 text-center wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-4 text-secondary mb-4"><span class="text-primary">Commissions Abertas</span><br> Para Projetos 2025</h1>
+                <a href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings" class="btn btn-primary py-3 px-5" target="_blank">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+        <!-- Gallery Start -->
+    <div class="container-fluid menu py-5 px-0">
+        <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px; margin: auto;">
+            <h5 class="section-title">Galeria</h5>
+            <h1 class="display-3 mb-0">Trabalhos Recentes</h1>
+        </div>
+        <div class="tab-class text-center">
+            <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5 wow fadeIn" data-wow-delay="0.2s">
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill text-white active" data-bs-toggle="pill" href="#tab-1">Mangá</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill text-white" data-bs-toggle="pill" href="#tab-2">Ilustrações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link rounded-pill text-white" data-bs-toggle="pill" href="#tab-3">Sketches</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-0">
+                        <!-- Adicione suas páginas de mangá aqui -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/manga-pagina-4.jpg" alt="Página de Mangá 1">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/manga-pagina-3.jpg" alt="Página de Mangá 1">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/manga-pagina-2.jpg" alt="Página de Mangá 1">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/manga-pagina-5.jpg" alt="Página de Mangá 1">
+                            </div>
+                        </div>
+                        <!-- Repita para outras páginas -->
+                    </div>
+                </div>
+                <div id="tab-2" class="tab-pane fade p-0">
+                    <div class="row g-0">
+                        <!-- Adicione suas ilustrações aqui -->
+                        <div class="col-lg-6 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/ilustracao-horizontal.jpg" alt="Ilustração Horizontal">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/ilustracao-horizontal1.jpg" alt="Ilustração Horizontal">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/ilustracao-horizontal2.jpg" alt="Ilustração Horizontal">
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/ilustracao-horizontal3.jpg" alt="Ilustração Horizontal">
+                            </div>
+                        <!-- Repita para outras ilustrações -->
+                    </div>
+                </div>
+                <div id="tab-3" class="tab-pane fade p-0">
+                    <div class="row g-0">
+                        <!-- Adicione seus sketches aqui -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/sketch-personagem-1.jpg" alt="Sketch 1">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/sketch-personagem-2.jpg" alt="Sketch 2">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/sketch-personagem-3.jpg" alt="Sketch 3">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="position-relative">
+                                <img class="img-fluid manga-panel" src="img/sketch-personagem-4.jpg" alt="Sketch 4">
+                            </div>
+                        </div>
+                        <!-- Repita para outros sketches -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+         <!-- Wide Carousel Start -->
+    <section class="wide-carousel-section">
+        <div class="container wow fadeIn" data-wow-delay="0.5s">
+            <h2 class="section-title text-center mb-5">Destaque Especial</h2>
+            <div class="wide-carousel">
+                <div class="wide-carousel-inner">
+                    <div class="wide-carousel-item">
+                        <img src="img/personagens-frente(wide 32por 9).jpg" alt="Personagem Wide 1" class="manga-panel">
+                    </div>
+                    <div class="img/wide-carousel-item">
+                        <img src="img/personagens-frente(wide 32por 9).jpg" alt="Personagem Wide 2" class="manga-panel">
+                    </div>
+                    <div class="wide-carousel-item">
+                        <img src="img/personagens-frente(wide 32por 9).jpg" alt="Personagem Wide 3" class="manga-panel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Wide Carousel End -->
+    <!-- Characters Start -->
+    <div class="container-fluid p-5">
+        <div class="mb-5 text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px; margin: auto;">
+            <h5 class="section-title">Personagens</h5>
+            <h1 class="display-3 mb-0">Designs Memoráveis</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4  wow fadeIn" data-wow-delay="0.1s">
+                <div class="team-item position-relative">
+                    <div class="position-relative overflow-hidden rounded-circle rounded-bottom rounded-end">
+                        <img class="img-personagem" src="img/personagens-detalhes.jpg" alt="Personagem Ryu">
+                        <div class="team-overlay">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
+                                        class="fas fa-search-plus"></i></a>
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
+                                        class="fas fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute start-0 bottom-0 d-flex flex-column justify-content-center w-100 rounded-bottom text-center"
+                        style="height: 100px; background: rgba(34, 36, 41, .9);">
+                        <h5 class="text-light">Arte para RPG</h5>
+                        <p class="small text-uppercase text-secondary m-0" style="letter-spacing: 3px;">Gabriel Alves</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4  wow fadeIn" data-wow-delay="0.3s">
+                <div class="team-item position-relative">
+                    <div class="position-relative overflow-hidden rounded-circle rounded-bottom rounded-end">
+                        <img class="img-personagem" src="img/personagens-detalhes1.JPG" alt="Personagem Akira">
+                        <div class="team-overlay">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
+                                        class="fas fa-search-plus"></i></a>
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
+                                        class="fas fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute start-0 bottom-0 d-flex flex-column justify-content-center w-100 rounded-bottom text-center"
+                        style="height: 100px; background: rgba(34, 36, 41, .9);">
+                        <h5 class="text-light">Casting de professores</h5>
+                        <p class="small text-uppercase text-secondary m-0" style="letter-spacing: 3px;">Escola Livre Expressão</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4  wow fadeIn" data-wow-delay="0.5s">
+                <div class="team-item position-relative">
+                    <div class="position-relative overflow-hidden rounded-circle rounded-bottom rounded-end">
+                        <img class="img-personagem" src="img/personagens-detalhes2.JPG" alt="Personagem Hikari">
+                        <div class="team-overlay">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
+                                        class="fas fa-search-plus"></i></a>
+                                <a class="btn btn-light btn-square rounded-circle mx-1" href="#"><i
+                                        class="fas fa-share-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute start-0 bottom-0 d-flex flex-column justify-content-center w-100 rounded-bottom text-center"
+                        style="height: 100px; background: rgba(34, 36, 41, .9);">
+                        <h5 class="text-light">Capa do Album</h5>
+                        <p class="small text-uppercase text-secondary m-0" style="letter-spacing: 3px;">OLMSDB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Characters End -->
+     <!-- Timelapse Start -->
+<section class="timelapse-section wow fadeIn" data-wow-delay="0.2s">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Processo Criativo</h2>
+        <div class="timelapse-container">
+            <video controls autoplay loop muted class="manga-panel">
+                <source src="img/timelapse-post-wip.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+            <p class="text-center text-light mt-3">Timelapse da criação: "Kempachi"</p>
+        </div>
+    </div>
+</section>
+<!-- Timelapse End -->
+    
+    <!-- Social Start -->
+    <div class="container-fluid position-relative instagram p-0 mt-5">
+        <a href="https://www.instagram.com/lucas_kings_art?igsh=MTNrbm9iNGNpbHJjNA==" target="_blank" class="d-flex align-items-center justify-content-center position-absolute top-50 start-50 translate-middle bg-white rounded-circle" style="width: 100px; height: 100px; z-index: 1;">
+            <i class="fab fa-instagram fa-2x text-secondary"></i>
+        </a>
+        <div class="row g-0">
+            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                <img class="img-fluid manga-panel" src="img/post-arte-1.jpg" alt="Post Instagram">
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+                <img class="img-fluid manga-panel" src="img/post-arte-1.jpg" alt="Post Instagram">
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                <img class="img-fluid manga-panel" src="img/post-arte-3.jpg" alt="Post Instagram">
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+                <img class="img-fluid manga-panel" src="img/post-arte-4.jpg" alt="Post Instagram">
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+                <img class="img-fluid manga-panel" src="img/post-arte-1.jpg" alt="Post Instagram">
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 wow fadeIn" data-wow-delay="0.4s">
+                <img class="img-fluid manga-panel" src="img/post-arte-1.jpg" alt="Post Instagram">
+            </div>
+        </div>
+    </div>
+    <!-- Social End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary px-5">
+        <div class="row gx-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="col-lg-8 col-md-6">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                        <h3 class="text-light mb-4">Contato</h3>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <p class="mb-0">Goiás, Brasil</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">lucasreisdesingpg@gmail.com</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+55 61 9404-7896</p>
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a class="btn btn-primary btn-square rounded-circle me-2" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings" target="_blank"><i
+                                    class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-primary btn-square rounded-circle me-2" href="https://www.instagram.com/lucas_kings_art?igsh=MTNrbm9iNGNpbHJjNA==" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <h3 class="text-light mb-4">Links Rápidos</h3>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Início</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Sobre</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Portfólio</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Personagens</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Blog</a>
+                            <a class="text-secondary" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Contato</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <h3 class="text-light mb-4">Serviços</h3>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Commissions</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Design de Personagens</a>
+                            <a class="text-secondary mb-2" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Ilustrações</a>
+                            <a class="text-secondary mb-2" href="#"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Mangás</a>
+                            <a class="text-secondary mb-2" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Tutoriais</a>
+                            <a class="text-secondary" href="https://api.whatsapp.com/send?phone=556194047896&text=Contato%20Luke%20Kings"><i
+                                    class="bi bi-arrow-right text-primary me-2"></i>Workshops</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 p-5"
+                    style="background: #111111;">
+                    <h3 class="text-white mb-4">Newsletter</h3>
+                    <h6 class="text-uppercase text-light mb-2">Receba Atualizações</h6>
+                    <p class="small text-secondary">Novos trabalhos, tutoriais e oportunidades de commission</p>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-white p-3" placeholder="Seu Email">
+                            <button class="btn btn-primary">Inscrever</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4 py-lg-0 px-5" style="background: #111111;">
+        <div class="row gx-5">
+            <div class="col-lg-8">
+                <div class="py-lg-4 text-center">
+                    <p class="text-secondary mb-0">&copy; <a class="text-light fw-bold" href="#">Levi Reis</a>. Todos os direitos reservados.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="py-lg-4 text-center credit">
+                    <p class="text-light mb-0">Desenvolvido por <a class="text-light fw-bold" target="_blank"
+                            href="#">Levi Reis</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-dark py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
